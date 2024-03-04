@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+Name: Ryan Hinkle
+Class: CPSC-20000 02
+Project: Health Insurance Risk Calculator
+Date: December 5, 2022
+-->
+
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css"> <!--Links CSS sheet-->
+	<link rel="icon" href="cross.ico"> <!--Cross icon in tab-->
+	<title>Health Insurance Risk Calculator</title>
+</head>
+
+<body style="text-align: center;">
+	<h1> <!--Title and animated crosses-->
+		<img src="cross.gif"
+			alt="Animated Cross" style="width:75px;height:75px;" > Health Insurance
+			<br> Risk Calculator
+		<img src="cross.gif"
+			alt="Animated Cross" style="width:75px;height:75px;" > </h1>
+
+	<p>This program is going to determine the status of a patient's health for
+		insurance purposes. <br> Please select the answers that accurately
+		reflect their information and family history.</p> <!--User instructions for program-->
+	<br>
+
+	<label>Please select their age.</label> <br> <!--Question 1-->
+	<select id="age">
+		<option value="invalid">&nbsp</option>
+		<option value="0">0-29</option>
+		<option value="10">30-44</option>
+		<option value="20">45-59</option>
+		<option value="30">60+</option>
+	</select>
+	<br ><label id="error1" style=color:red></label> <!--Error code for no input-->
+	<br> <br>
+
+	<label>Please enter their height.</label> <br> <!--Question 2-->
+	<select id="heightFeet">
+		<option value="invalid">&nbsp</option>
+		<option value="3">3'</option>
+		<option value="4">4'</option>
+		<option value="5">5'</option>
+		<option value="6">6'</option>
+		<option value="7">7'</option>
+	</select>
+
+	<select id="heightInches">
+		<option value="invalid">&nbsp</option>
+		<option value="0">0"</option>
+		<option value="1">1"</option>
+		<option value="2">2"</option>
+		<option value="3">3"</option>
+		<option value="4">4"</option>
+		<option value="5">5"</option>
+		<option value="6">6"</option>
+		<option value="7">7"</option>
+		<option value="8">8"</option>
+		<option value="9">9"</option>
+		<option value="10">10"</option>
+		<option value="11">11"</option>
+	</select>
+	<br ><label id="error2" style=color:red></label> <!--Error code for no input-->
+
+	<br> <br>
+
+	<label>Please enter their weight in pounds.</label> <br> <!--Question 3-->
+	<input size="5" id="weightInput"></input> <br>
+	<label id="error3" style=color:red></label> <!--Error code for no input-->
+
+	<br> <br>
+	<img src="healthGraphic.png" width="400px"></img>
+	<br> Refer to the graphic above for the next question.
+    <br>
+
+	<label> <br>Which category fits them best?</label> <br> <!--Question 4-->
+	<select id="pressure">
+		<option value="invalid"></option>&nbsp</option>
+		<option value="0">Normal</option>
+		<option value="15">Elevated</option>
+		<option value="30">High (Stage 1)</option>
+		<option value="75">High (Stage 2)</option>
+		<option value="100">Hypertensive Crisis</option>
+	</select>
+	<br ><label id="error4" style=color:red></label> <!--Error code for no input-->
+	<br> <br>
+
+	<label>Are any of the following in their family history?</label> <br> <!--Question 5-->
+	<input type="checkbox" id="history1" value="10">Diabetes</input>
+	<input type="checkbox" id="history2" value="10">Cancer</input>
+	<input type="checkbox" id="history3" value="10">Alzheimer's</input>
+	<br> <br>
+
+	<br> <br> 
+	<button onclick="calculateRisk()">Calculate Risk Score</button> <br>  <!--Calc risk button-->
+	<p id="signal"></p><p style="font-weight:bold;font-style: italic" id="remark"></p> <!--Displays the level of risk-->
+
+	<br>
+
+	<button disabled="true" id="detailed" onclick="detailedResults()">See Detailed Results</button>  <!--See detailed results button-->
+
+	<p id="desc"></p> <!--Explanation text and element for each questions risk score-->
+	<p id="detailAge"></p>
+	<p id="detailBMI"></p>
+	<p id="detailPressure"></p>
+	<p id="detailHistory"></p>
+
+	<script src="health-insurance-risk-calculator.js"></script> <!--Link to external JS file-->
+
+</body>
+</html>
