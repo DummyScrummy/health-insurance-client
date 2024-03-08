@@ -1,0 +1,13 @@
+@font-face { font-family: lobster; src: url("assets/fonts/lobster.ttf"); } 
+
+body {
+    text-align: center;
+    background-color: #F8EDE3;
+}
+
+h1 {
+    color: #7D6E83;
+    -webkit-text-stroke:  1px black;
+    font-family: "lobster";
+    font-size: 60px;
+  }
