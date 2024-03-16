@@ -12,6 +12,7 @@ Date: December 5, 2022
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="style.css"> <!--Links CSS sheet-->
 	<link rel="icon" href="assets/img/cross.ico"> <!--Cross icon in tab-->
+	<script src="main.js"></script> <!--Link to external JS file-->
 	<title>Health Insurance Risk Calculator</title>
 </head>
 
@@ -98,18 +99,5 @@ Date: December 5, 2022
 	<br> <br> 
 	<button onclick="calculateRisk()">Calculate Risk Score</button> <br>  <!--Calc risk button-->
 	<p id="signal"></p><p style="font-weight:bold;font-style: italic" id="remark"></p> <!--Displays the level of risk-->
-
-	<br>
-
-	<button disabled="true" id="detailed" onclick="detailedResults()">See Detailed Results</button>  <!--See detailed results button-->
-
-	<p id="desc"></p> <!--Explanation text and element for each questions risk score-->
-	<p id="detailAge"></p>
-	<p id="detailBMI"></p>
-	<p id="detailPressure"></p>
-	<p id="detailHistory"></p>
-
-	<script src="main.js"></script> <!--Link to external JS file-->
-
 </body>
 </html>
