@@ -1,4 +1,4 @@
-let serverURL = "http://localhost:3000" // For testing purposes, replace with Azure host
+let serverURL = "https://health-insurance-risk-server.azurewebsites.net" // For testing purposes, replace with Azure host
 console.log("Starting...");
 
 ping();
