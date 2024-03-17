@@ -1,6 +1,12 @@
 let serverURL = "http://localhost:3000" // For testing purposes, replace with Azure host
 console.log("Starting...");
 
+ping();
+
+async function ping() {
+    fetch (serverURL + '/api/ping')
+}
+
 // Age risk function
 async function ageRisk() {
     const ageOption = parseInt(document.getElementById("age").selectedOptions[0].value);
