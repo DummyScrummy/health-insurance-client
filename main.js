@@ -1,4 +1,4 @@
-let serverURL = "https://health-insurance-risk-server.azurewebsites.net" // For testing purposes, replace with Azure host
+let serverURL = "https://health-insurance-risk-server.azurewebsites.net"
 console.log("Starting...");
 
 ping();
@@ -10,6 +10,14 @@ async function ping() {
 // Age risk function
 async function ageRisk() {
     const ageOption = parseInt(document.getElementById("age").selectedOptions[0].value);
+
+    // validate input
+    if (isNaN(ageOption)) {
+        document.getElementById("error1").innerHTML = "Please select an age.";
+        throw new Error("Age is invalid");
+    } else {
+        document.getElementById("error1").innerHTML = "";
+    }
 
     const response = await fetch(serverURL + `/age-risk?ageOption=${ageOption}`);
     const data = await response.json();
@@ -23,7 +31,22 @@ async function BMIRisk() {
     const heightFeet = parseInt(document.getElementById("heightFeet").value);
     const heightInches = parseInt(document.getElementById("heightInches").value);
     const weight = parseInt(document.getElementById("weightInput").value);
-    
+
+    // validate input 
+    if (isNaN(heightFeet) || isNaN(heightInches)) {
+        document.getElementById("error2").innerHTML = "Please select a height.";
+        throw new Error("Height is invalid");
+    } else {
+        document.getElementById("error2").innerHTML = "";
+    }
+
+    if (isNaN(weight)) {
+        document.getElementById("error3").innerHTML = "Please enter a valid weight.";
+        throw new Error("Weight is invalid");
+    } else {
+        document.getElementById("error3").innerHTML = "";
+    }
+
     const params = `?heightFeet=${heightFeet}&heightInches=${heightInches}&weight=${weight}`;
 
     const response = await fetch(serverURL + `/bmi-risk${params}`);
@@ -36,6 +59,14 @@ async function BMIRisk() {
 // Pressure risk function
 async function pressureRisk() {
     const pressureOption = parseInt(document.getElementById("pressure").selectedOptions[0].value);
+
+    // validate input
+    if (isNaN(pressureOption)) {
+        document.getElementById("error4").innerHTML = "Please select a category.";
+        throw new Error("Blood pressure category is invalid");
+    } else {
+        document.getElementById("error4").innerHTML = "";
+    }
 
     const response = await fetch(serverURL + `/pressure-risk?pressureOption=${pressureOption}`);
     const data = await response.json();
