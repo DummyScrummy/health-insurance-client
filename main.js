@@ -81,4 +81,7 @@ async function calculateRisk() {
 
         console.log("Total Risk:", totalRisk);
         console.log(remark);
+
+        document.getElementById("totalRisk").innerText = "Total Risk: " + totalRisk
+        document.getElementById("remark").innerText = remark
     }
