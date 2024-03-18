@@ -22,6 +22,7 @@ async function ageRisk() {
     const response = await fetch(serverURL + `/age-risk?ageOption=${ageOption}`);
     const data = await response.json();
     const ageRisk = data.ageRisk;
+    document.getElementById("ageRisk").innerText = "Age Risk: " + ageRisk
     console.log("Age Risk :", ageRisk);
     return ageRisk;
 }
@@ -52,6 +53,7 @@ async function BMIRisk() {
     const response = await fetch(serverURL + `/bmi-risk${params}`);
     const data = await response.json();
     const bmiRisk = data.bmiRisk;
+    document.getElementById("bmiRisk").innerText = "BMI Risk: " + bmiRisk
     console.log("BMI Risk:", bmiRisk);
     return bmiRisk;
 }
@@ -71,6 +73,7 @@ async function pressureRisk() {
     const response = await fetch(serverURL + `/pressure-risk?pressureOption=${pressureOption}`);
     const data = await response.json();
     const pressureRisk = data.pressureRisk;
+    document.getElementById("pressureRisk").innerText = "Pressure Risk: " + pressureRisk
     console.log("Pressure Risk :", pressureRisk);
     return pressureRisk;
 }
@@ -86,6 +89,7 @@ async function historyRisk() {
     const response = await fetch(serverURL + `/history-risk${params}`);
     const data = await response.json();
     const historyRisk = data.historyRisk;
+    document.getElementById("historyRisk").innerText = "History Risk: " + historyRisk
     console.log("History Risk:", historyRisk);
     return historyRisk;
 }
